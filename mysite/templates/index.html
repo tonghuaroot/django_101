@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fuck</title>
+</headss
+<body>
+	<h1 style="background-color: antiquewhite;color:black;">用户输入</h1>
+	<form action="/index" method="post">
+		{% csrf_token %}
+		用 户 名：<input type="text" name="username">
+		<br/>
+		密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" name="password">
+		<br/>
+		<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="submit" value="提交">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="submit" value="忘记密码">
+	</form>
+
+	<h1 style="background-color: antiquewhite;color:black;">用户展示</h1>
+	<table border="1">
+		<thead>
+			<th>用户名</th>
+			<th>密码</th>
+		</thead>
+		<tbody>
+			{% for line in data %}
+			<tr>
+				<td>{{ line.user }}</td>
+				<td>{{ line.pwd }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<script src="/static/js/jquery-migrate-1.4.1.js"></script>
+</body>
+</html>
